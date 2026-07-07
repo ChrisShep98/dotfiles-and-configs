@@ -47,6 +47,9 @@ return {
           }
         end,
       })
+      -- lazygit: make its floating window match Telescope's look.
+      -- I had to modify the config.yml file in 'Library/Application/ Support' to change color of the rest of the borders specifically for kanagawa
+      vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "TelescopeBorder" })
       vim.cmd("colorscheme kanagawa-wave")
     end
   }
