@@ -12,7 +12,16 @@ return {
     --@module "neo-tree"
     --@type neotree.Config?
     config = function()
-      vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left<CR>")
+      vim.keymap.set("n", "<leader>n", function()
+        -- Checks whether the buffer you're currently in is the neo-tree window 
+        if vim.bo.filetype == "neo-tree" then
+          -- Already focused in the tree: close it
+          vim.cmd("Neotree close")
+        else
+          -- In a file (tree open or closed): reveal + focus the tree
+          vim.cmd("Neotree filesystem reveal left")
+        end
+      end, { desc = "Toggle/focus Neo-tree" })
       require("neo-tree").setup({
         filesystem = {
           filtered_items = {
