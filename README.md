@@ -11,3 +11,11 @@ ln -s ~/Documents/Personal/Repositories/dotfiles/.tmux.conf ~/.
 # Verfiy the symlink is correct
 ls -la ~/.tmux.conf
 /Users/chrisshepard/.tmux.conf -> /Users/chrisshepard/Documents/Personal/Repositories/dotfiles/.tmux.conf
+
+
+## Other
+
+# iTerm2 font/view settings
+
+Smaller - 14 font, 88 v|i 90 n/n
+Larger  - 17 font, 100 v|i, 100 n/n 
